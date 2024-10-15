@@ -5,6 +5,7 @@ Aufgabe in der Readme-Datei
 
 */
 
+// Objekt für die Jahreszahlen
 const jahr = {
   2020: "2020",
   2021: "2021",
@@ -12,6 +13,7 @@ const jahr = {
   2023: "2023",
   2024: "2024",
 };
+// Objekt für die Monatsnamen und -zahlen
 const monatsName = {
   Januar: "01",
   Februar: "02",
@@ -29,32 +31,39 @@ const monatsName = {
 };
 
 function extractClassName(sessionTitle) {
-  let array1 = sessionTitle.split(" ");
-  // console.log(array1);
-  const jahre = Object.values(jahr);
-  const monate = Object.keys(monatsName);
+  let array1 = sessionTitle.split(" "); // split.Methode -> gibt Array zurück mit einzelne Wörter u. speichert in Variable
+  // console.log(array1);   // Test ob geklappt
+  const jahre = Object.values(jahr); // Object.Methode um Jahreszahlen als Array in Variable zu speichern
+  // console.log(jahre); // Test
+  const monate = Object.keys(monatsName); // Object.Methode um Monate als Array in Variable zu speichern
+  // console.log(monate); // Test
 
+  // Schleife untersucht, ob eine Jahreszahl (aus jahre) in dem array1 einhalten ist
   let jahrGefunden = null;
   for (let i = 0; i < jahre.length; i++) {
     if (array1.includes(jahre[i])) {
-      jahrGefunden = jahre[i];
+      jahrGefunden = jahre[i]; // wenn ja wird die gefundene Jahreszahl in jahrGefunden-Variablen gespeichert
       // console.log(jahrGefunden);
       break;
     }
   }
 
+  // Schleife untersucht, ob eine Monat (aus monate) in dem array1 einhalten ist
   let monatGefunden = null;
   for (let i = 0; i < monate.length; i++) {
     if (array1.includes(monate[i])) {
-      monatGefunden = monatsName[monate[i]];
-      // console.log(monatGefunden);
+      // console.log(monate[i]); // Test: gibt Monatsname heraus
+      // console.log(monatsName[monate[i]]);  // Test: gibt Monatszahl heraus
+      monatGefunden = monatsName[monate[i]]; // wenn ja wird die Monatszahl in der monatGefunden-Variablen gespeichert
+      // console.log(monatGefunden); // Test
       break;
     }
   }
+  // check ob "Class", eine Jahreszahl und ein Monat enthalten ist
   if (array1.includes("Class") && jahrGefunden && monatGefunden) {
-    return jahrGefunden + "-" + monatGefunden;
+    return jahrGefunden + "-" + monatGefunden; // wenn ja, dann return "jahrGefunden + "-" + monatGefunden;"
   } else {
-    return null;
+    return null; // wenn nicht = null
   }
 }
 
