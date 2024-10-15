@@ -1,3 +1,8 @@
+/*
+Kata von:
+https://github.com/thomas-brakutt/Coding-Foundation-Katas/tree/main/01-zip-strings 
+Aufgabe in der Readme */
+
 function zipStrings(str1, str2) {
   let ergebnis = ""; // Variable mit leeren string zum Ergebnis speichern
 
