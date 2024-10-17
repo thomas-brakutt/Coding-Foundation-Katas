@@ -1,3 +1,3 @@
 function filterApiData(apiData, mandatoryKeys) {
-  // Add you solution here
+  let filterData = []; // Variable mit leerem Array, zum speichern der gefilterten Daten
 }
